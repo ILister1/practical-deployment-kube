@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service1
+spec:
+  selector:
+    matchLabels:
+      run: service1
+  template:
+    metadata:
+      labels:
+        run: service1
+    spec:
+      containers:
+      - name: service1
+        image: isaaclister/core-project1:latest
+        ports:
+        - containerPort: 5000
